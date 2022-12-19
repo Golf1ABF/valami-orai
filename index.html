@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulátor</title>
+  <style>
+    body {
+      background: linear-gradient(to right, red, orange, yellow, green, blue, purple);
+    }
+    .content {
+      width: 900px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 2px 2px 5px grey;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2em;
+    }
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      box-shadow: 1px 1px 2px grey;
+    }
+    th, td {
+      border: 1px solid grey;
+      padding: 5px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    th {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+    td {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    input[type="text"] {
+      width: 70px;
+    }
+    input[name="main"] {
+      width: 30px;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.5);
+    }
+    img {
+      width: 100px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Utazás kalkulátor</h1>
+    <table>
+      <tr>
+        <td><img src="planet.gif"></td>
+        <th>Úticél</th>
+        <th>Ár</th>
+        <th>Reptéri illeték</th>
+        <th>Biztosítás 12 %</th>
+        <th>Fő</th>
+        <th>Összesen</th>
+      </tr>
+      <tr>
+        <td><img src="roma.jpg"></td>
+        <td>Róma</td>
+        <td><input type="text" value="220000" disabled id="ar1"> Ft</td>
+        <td><input type="text" value="12" disabled id="szazalek1">%</td>
+        <td><input type="checkbox" checked></td>
+            <td><input type="text" name="main" id="fo1">Fő</td>
+            <td><input type="text" value="0" disabled id="összesen1"></td>
+          </tr>
+          <tr>
+            <td><img src="jordania.jpg"></td>
+            <td>Jordánia</td>
+            <td><input type="text" value="425000" disabled id="ar2"></td>
+            <td><input type="text" value="16" disabled id="szazalek2">%</td>
+            <td><input type="checkbox" checked></td>
+            <td><input type="text" name="main" id="fo2">Fő</td>
+            <td><input type="text" value="0" disabled id="összesen2"></td>
+          </tr>
+          <tr>
+            <td><img src="torokorszag.jpg"></td>
+            <td>Törökország</td>
+            <td><input type="text" value="395000" disabled id="ar3"></td>
+            <td><input type="text" value="13" disabled id="szazalek3">%</td>
+            <td><input type="checkbox" checked></td>
+            <td><input type="text" name="main" id="fo3">Fő</td>
+            <td><input type="text" value="0" disabled id="összesen3"></td>
+          </tr>
+          <tr>
+            <td><img src="marokko.jpg"></td>
+            <td>Marokkó</td>
+            <td><input type="text" value="376000" disabled id="ar4"></td>
+            <td><input type="text" value="17" disabled id="szazalek4">%</td>
+            <td><input type="checkbox" checked></td>
+            <td><input type="text" name="main" id="fo4">Fő</td>
+            <td><input type="text" value="0" disabled id="összesen4"></td>
+          </tr>
+          <tr>
+            <td colspan="6">Mindösszesen:</td>
+            <td><input type="text" value="0" disabled></td>
+          </tr>
+        </table>
+      </div>
+      <script>
+        document.getElementById("fo1").addEventListener("change", szamolo);
+        document.getElementById("fo2").addEventListener("change", szamolo);
+        document.getElementById("fo3").addEventListener("change", szamolo);
+        document.getElementById("fo4").addEventListener("change", szamolo);
+
+        
+        function szamolo() {
+          let szazalek1 = document.getElementById("szazalek1").value;
+          let szazalek2 = document.getElementById("szazalek2").value;
+          let szazalek3 = document.getElementById("szazalek3").value;
+          let szazalek4 = document.getElementById("szazalek4").value;
+
+          let ar1 = document.getElementById("ar1").value;
+          let ar2 = document.getElementById("ar2").value;
+          let ar3 = document.getElementById("ar3").value;
+          let ar4 = document.getElementById("ar4").value;
+        }
+      </script>
+</body>
+</html>
